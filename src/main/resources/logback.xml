@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <Target>System.out</Target>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%date [%file:%line] %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.romanvoloboev" level="INFO" additivity="true">
+        <appender-ref ref="stdout" />
+    </logger>
+</configuration>

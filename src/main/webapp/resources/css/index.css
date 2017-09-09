@@ -1,0 +1,248 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+.footer {
+    width: 120px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    background: hsl(192, 15%, 84%);
+    border-radius: 4px;
+    outline: none;
+
+    padding: 7px 10px;
+    color: #fff;
+    font-size: 12px;
+}
+
+button:hover {
+    background: hsl(204, 8%, 76%);
+    transition: background .7s;
+}
+
+button:active {
+    background: hsl(204, 8%, 66%);
+}
+
+.delete {
+    border: none;
+    background: hsl(6, 78%, 57%);
+}
+
+.delete:hover {
+    background: hsl(6, 64%, 46%)
+}
+
+.delete:active {
+    background: hsl(6, 64%, 36%)
+}
+
+.add, #saveOrUpdateBtn {
+    border: none;
+    background: hsl(145, 63%, 49%);
+}
+
+.add:hover, #saveOrUpdateBtn:hover {
+    background: hsl(145, 64%, 42%);
+}
+
+.add:active, #saveOrUpdateBtn:active {
+    background: hsl(145, 64%, 32%);
+}
+
+.edit {
+    border: none;
+    background: hsl(203, 100%, 48%);
+}
+
+.edit:hover {
+    background: hsl(206, 100%, 39%);
+}
+
+.edit:active {
+    background: hsl(206, 100%, 28%);
+}
+
+.cancel {
+    border: none;
+    background: hsl(48, 89%, 50%);
+}
+
+.cancel:hover {
+    background: hsl(48, 90%, 42%);
+}
+
+.cancel:active {
+    background: hsl(48, 90%, 32%);
+}
+
+#back {
+    background: rgba(52, 52, 52, 0.67);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+}
+
+#modalWindow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    margin-left: -250px;
+    margin-top: -50px;
+    padding: 10px;
+    z-index: 10;
+    display: none;
+}
+
+a.close {
+    display: block;
+    content: "";
+    color: #000;
+    font-size: 2em;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    transition: .5s;
+}
+
+a.close:hover {
+    color: red !important;
+}
+
+form {
+    margin: 10px;
+}
+
+form .form-row {
+    margin-top: 10px;
+}
+
+form .form-row h4 {
+    text-align: center;
+    margin: 0;
+}
+
+#error {
+    color: red;
+    max-width: 430px;
+    display: block;
+    text-align: center;
+}
+
+form .buttons {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    text-transform: capitalize;
+}
+
+form input {
+    border: 1px solid #ddd;
+    padding: 2px 5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 8px #ddd;
+}
+
+form textarea {
+    border: 1px solid #ddd;
+    padding: 2px 5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 8px #ddd;
+    width: 100%;
+    height: 100px;
+
+}
