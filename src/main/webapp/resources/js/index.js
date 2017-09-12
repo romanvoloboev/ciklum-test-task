@@ -95,7 +95,7 @@ function loadMessages() {
                         '</tr>';
                 });
             } else {
-                html = '<tr><td colspan="3">There is no messages yet :(</td></tr>';
+                html = '<tr><td colspan="3">There are no messages yet :(</td></tr>';
             }
             $('table').append(html);
         }
