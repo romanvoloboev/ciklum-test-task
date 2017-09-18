@@ -2,16 +2,15 @@ package com.romanvoloboev.dao;
 
 import com.romanvoloboev.model.Message;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author romanvoloboev
  */
 public class CollectionsDAOImpl implements MessageDAO {
-    private static final List<Message> messageList = new ArrayList<>();
+    private static final List<Message> messageList = new CopyOnWriteArrayList<>();
     private static final AtomicLong idSequence = new AtomicLong(1);
 
     @Override
@@ -22,10 +21,9 @@ public class CollectionsDAOImpl implements MessageDAO {
 
     @Override
     public void update(Message message) {
-        for (Iterator<Message> iterator = messageList.iterator(); iterator.hasNext();) {
-            Message oldMsg = iterator.next();
+        for (Message oldMsg:messageList) {
             if (oldMsg.getId().equals(message.getId())) {
-                iterator.remove();
+                messageList.remove(oldMsg);
                 break;
             }
         }
@@ -34,10 +32,9 @@ public class CollectionsDAOImpl implements MessageDAO {
 
     @Override
     public void delete(Long id) {
-        for (Iterator<Message> iterator = messageList.iterator(); iterator.hasNext();) {
-            Message message = iterator.next();
+        for (Message message:messageList) {
             if (message.getId().equals(id)) {
-                iterator.remove();
+                messageList.remove(message);
                 break;
             }
         }

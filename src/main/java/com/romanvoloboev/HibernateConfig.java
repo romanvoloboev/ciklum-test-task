@@ -35,6 +35,7 @@ public class HibernateConfig {
     }
 
     @Bean
+    @Conditional(DatabaseStoragePropertyCondition.class)
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
@@ -64,6 +65,7 @@ public class HibernateConfig {
 
     @Bean
     @Autowired
+    @Conditional(DatabaseStoragePropertyCondition.class)
     public HibernateTransactionManager transactionManager(SessionFactory s) {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(s);
