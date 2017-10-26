@@ -3,10 +3,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.romanvoloboev</groupId>
-    <artifactId>ciklum-test-task</artifactId>
+    <artifactId>some-company-test-task</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-    <name>ciklum-test-task</name>
+    <name>some-company-test-task</name>
 
     <properties>
         <jdk.version>1.8</jdk.version>
